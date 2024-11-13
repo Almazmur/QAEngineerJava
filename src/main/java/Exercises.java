@@ -48,7 +48,7 @@ public class Exercises {
 
         if (value <= 0) {
             System.out.println("Красный");
-        } else if (value > 0 && value <= 100) {
+        } else if (value <= 100) {
             System.out.println("Желтый");
         } else {
             System.out.println("Зеленый");
@@ -122,7 +122,7 @@ public class Exercises {
      * передается строка и число, метод должен отпечатать в
      * консоль указанную строку, указанное количество раз;
      */
-    public static void printStringCount(String text, int count) {
+    public  void printStringCount(String text, int count) {
         for (int i = 0; i < count; i++) {
             System.out.println(text);
         }
@@ -136,7 +136,7 @@ public class Exercises {
      * високосный - false). Каждый 4-й год является високосным,
      * кроме каждого 100-го, при этом каждый 400-й - високосный.
      */
-    public static boolean leapYearIsNot(int year) {
+    public boolean isLeapYear(int year) {
         if (year % 400 == 0) {
             return true;
         } else if (year % 100 == 0) {
@@ -155,7 +155,7 @@ public class Exercises {
      * и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и
      * условия заменить 0 на 1, 1 на 0;
      */
-    public static int[] invertArray(int[] array) {
+    public  int[] invertArray(int[] array) {
         for (int i = 0; i < array.length; i++) {
             array[i] = (array[i] == 0) ? 1 : 0;
         }
@@ -168,7 +168,7 @@ public class Exercises {
      * помощью цикла заполнить его значениями 1 2 3 4 5 6 7 8
      * 100;
      */
-    public static int[] fillArray() {
+    public int[] fillArray() {
         int[] array = new int[100];
         for (int i = 0; i < 100; i++) {
             array[i] = i + 1;
@@ -181,7 +181,7 @@ public class Exercises {
      * 12. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по
      * нему циклом, и числа меньшие 6 умножить на 2;
      */
-    public static int[] multiplyIfLessThanSix(int[] array) {
+    public int[] multiplyIfLessThanSix(int[] array) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] < 6) {
                 array[i] *= 2;
@@ -200,7 +200,7 @@ public class Exercises {
      * следующему принципу: индексы таких элементов равны, то
      * есть [O][0], [1][1], [2][2], , [n][n];
      */
-    public static int[][] fillDiagonal(int size) {
+    public int[][] fillDiagonal(int size) {
         int[][] array = new int[size][size];
 
         for (int i = 0; i < size; i++) {
@@ -216,7 +216,7 @@ public class Exercises {
      * initialValue, и возвращающий одномерный массив типа int длиной
      * len, каждая ячейка которого равна initialValue.
      */
-    public static int[] createArray(int len, int initialValue) {
+    public int[] createArray(int len, int initialValue) {
         int[] array = new int[len];
         Arrays.fill(array, initialValue);
         return array;
