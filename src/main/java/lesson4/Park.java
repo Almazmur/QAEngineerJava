@@ -1,8 +1,17 @@
 package lesson4;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Park {
 
-    public class Attraction{
+    private List<Attraction> attractionList;
+
+    public Park() {
+        this.attractionList = new ArrayList<>();
+    }
+
+    private class Attraction {
         private String name;
         private String workingHours;
         private double price;
@@ -10,30 +19,6 @@ public class Park {
         public Attraction(String name, String workingHours, double price) {
             this.name = name;
             this.workingHours = workingHours;
-            this.price = price;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public String getWorkingHours() {
-            return workingHours;
-        }
-
-        public void setWorkingHours(String workingHours) {
-            this.workingHours = workingHours;
-        }
-
-        public double getPrice() {
-            return price;
-        }
-
-        public void setPrice(double price) {
             this.price = price;
         }
 
@@ -47,9 +32,16 @@ public class Park {
         }
     }
 
-    public Attraction createAttraction(String name, String workingHours, double price) {
-        return new Attraction(name, workingHours, price);
+    public void addAttraction(String name, String workingHours, double price) {
+        Attraction attraction = new Attraction(name, workingHours, price);
+        attractionList.add(attraction);
     }
 
-
+    public List<String> getAttractionInfo() {
+        List<String> infoList = new ArrayList<>();
+        for (Attraction attraction : attractionList) {
+            infoList.add(attraction.toString());
+        }
+        return infoList;
+    }
 }

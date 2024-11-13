@@ -1,5 +1,7 @@
 package lesson4;
 
+import java.math.BigDecimal;
+
 public class Employee {
     private String firstName;
     private String lastName;
@@ -8,7 +10,7 @@ public class Employee {
     private String position;
     private String email;
     private String telephone;
-    private int salary;
+    private BigDecimal salary;
 
     public Employee(String firstName,
                     String lastName,
@@ -17,7 +19,7 @@ public class Employee {
                     String position,
                     String email,
                     String telephone,
-                    int salary) {
+                    BigDecimal salary) {
         this.firstName = firstName;
         this.salary = salary;
         this.telephone = telephone;
