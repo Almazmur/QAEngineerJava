@@ -26,6 +26,14 @@ public class Main {
                 {"75", "64", "88", "31"}
         };
 
+
+        String[][] unevenRowArray = {
+                {"1", "2", "3", "4"},
+                {"5", "6", "7", "8"},
+                {"9", "10", "12"},
+                {"13", "14", "15", "16"}
+        };
+
         try {
             System.out.println("Сумма элементов correctArray: " + sumArray(correctArray));
         } catch (MyArraySizeException | MyArrayDataException e) {
@@ -41,6 +49,12 @@ public class Main {
         try {
             System.out.println("Сумма элементов dataErrorArray: " + sumArray(dataErrorArray));
         }catch (MyArraySizeException | MyArrayDataException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            System.out.println("Сумма элементов problematicArray: " + sumArray(unevenRowArray));
+        } catch (MyArraySizeException | MyArrayDataException e) {
             System.out.println(e.getMessage());
         }
     }

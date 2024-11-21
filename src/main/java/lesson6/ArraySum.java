@@ -7,6 +7,13 @@ public class ArraySum {
             throw new MyArraySizeException("Размер массива должен быть 4х4");
         }
 
+        for(int i = 0; i < array.length; i++) {
+            if (array[i].length != 4) {
+                throw new MyArraySizeException("Размер массива должен быть 4х4. " +
+                        "Строка " + i + " имеет длину " + array[i].length);
+            }
+        }
+
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
